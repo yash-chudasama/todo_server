@@ -14,4 +14,4 @@ app.listen(9000,()=>{
     console.log("Listen on port 9000")
 })
 
-app.use('/toDoList',toDoListRouter)
+app.use('/todos',toDoListRouter)
