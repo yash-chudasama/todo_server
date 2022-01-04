@@ -11,6 +11,10 @@ const toDoListSchema=mongoose.Schema({
     hasDone:{
         type:Boolean,
         default:false
+    },
+    dueDate:{
+        type:Date,
+        required:true
     }
 });
 

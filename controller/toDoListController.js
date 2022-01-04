@@ -17,11 +17,11 @@ exports.addTask=(req,res,next)=>{
     var addInListData=new toDoList(req.body)
     addInListData.save().then((data)=>{
         console.log(data)
-        res.status(200)
+        res.status(200).end()
     }).catch(err=>{
         console.log("Error in addTask")
         console.log(err)
-        res.status(500)
+        res.status(500).end()
     })
 }
 
@@ -40,11 +40,11 @@ exports.getTask=(req,res,next)=>{
 exports.removeTask=(req,res,next)=>{
    var id=req.params.id
    toDoList.findByIdAndDelete(id).then((data)=>{
-       res.status(200)
+       res.status(200).end()
    }).catch(err=>{
     console.log("Error in removeTask")
     console.log(err)
-       res.status(500)
+       res.status(500).end()
    })
 }
 
@@ -66,9 +66,9 @@ exports.changeStatus=(req,res,next)=>{
  //console.log(req.params)
  toDoList.findByIdAndUpdate(id,{$set: { hasDone :req.body.hasDone}},{new:true}).then((data)=>{
      console.log(data)
-     res.status(200)
+     res.status(200).end()
  }).catch(err=>{
      console.log(err)
-     res.status(500)
+     res.status(500).end()
  })
 }
